@@ -2,9 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebff3ddd-e72e-4a2d-b7ec-937b2c65b66e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/WEB_HTML_Forms_Kate/upload_file/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_HTML_Forms_Kate/upload_file/static/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WEB_HTML_Forms_Kate/land_mars/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WEB_HTML_Forms_Kate/land_mars/static/css/style1.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WEB_HTML_Forms_Kate/land_mars/static/img/434219-Kycb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WEB_HTML_Forms_Kate/land_mars/static/img/Ds8z8PsUwAAdmzJ.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WEB_HTML_Forms_Kate/land_mars/static/img/Painting_Art_Mars_Ships_USSR_570703_1280x720.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WEB_HTML_Forms_Kate/land_mars/static/js.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB_HTML_Forms_Kate/astronaut_selection/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_HTML_Forms_Kate/astronaut_selection/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB_HTML_Forms_Kate/result_of_choice/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_HTML_Forms_Kate/result_of_choice/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB_HTML_Forms_Kate/upload_file/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_HTML_Forms_Kate/upload_file/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB_HTML_Forms_Kate/upload_file/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_HTML_Forms_Kate/upload_file/static/css/style11.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB_HTML_Forms_Kate/variants_of_choice/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_HTML_Forms_Kate/variants_of_choice/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,6 +37,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1Z9pQT76kZNwSDbVQSPmL2PNxUv" />
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/WEB_HTML_Forms_Kate/land_mars/static/img" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -40,7 +54,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.main (3)">
+  <component name="RunManager" selected="Python.main (4)">
     <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="flask_tasks" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -104,6 +118,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="main (4)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="flask_tasks" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/WEB_HTML_Forms_Kate/land_mars" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/WEB_HTML_Forms_Kate/land_mars/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="flask_tasks" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -127,10 +162,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main (4)" />
         <item itemvalue="Python.main (3)" />
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.main (2)" />
         <item itemvalue="Python.main (1)" />
-        <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
   </component>
@@ -173,7 +209,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584265529454</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="4">
+      <created>1584269355093</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1584269355093</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -192,7 +235,8 @@
     <MESSAGE value="1_" />
     <MESSAGE value="2" />
     <MESSAGE value="3" />
-    <option name="LAST_COMMIT_MESSAGE" value="3" />
+    <MESSAGE value="4" />
+    <option name="LAST_COMMIT_MESSAGE" value="4" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
