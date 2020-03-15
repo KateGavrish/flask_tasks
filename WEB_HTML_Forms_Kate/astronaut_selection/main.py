@@ -3,7 +3,7 @@ from flask import Flask, url_for, request
 app = Flask(__name__)
 
 
-@app.route('/', methods=['POST', 'GET'])
+@app.route('/astronaut_selection', methods=['POST', 'GET'])
 def form_sample():
     if request.method == 'GET':
         return f'''<!doctype html>
