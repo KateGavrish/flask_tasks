@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebff3ddd-e72e-4a2d-b7ec-937b2c65b66e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/WEB_Flask-wtf/list_of_prof/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_Flask-wtf/list_of_prof/static/css/style_1.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_Flask-wtf/list_of_prof/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WEB_Flask-wtf/auto_answ/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WEB_Flask-wtf/auto_answ/static/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WEB_Flask-wtf/auto_answ/templates/auto_answer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WEB_Flask-wtf/auto_answ/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB_Flask-wtf/list_of_prof/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_Flask-wtf/list_of_prof/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,8 +31,13 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1Z9pQT76kZNwSDbVQSPmL2PNxUv" />
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/web11_lesson" />
+  </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/WEB_Flask-wtf/auto_answ/templates" />
+      <recent name="$PROJECT_DIR$/WEB_Flask-wtf/auto_answ/static/css" />
       <recent name="$PROJECT_DIR$/WEB_HTML_Forms_Kate/land_mars/static/img" />
     </key>
   </component>
@@ -46,8 +53,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.main (5)">
-    <configuration name="main (2)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.main (1)">
+    <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="flask_tasks" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -55,11 +62,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/WEB_HTML_Forms_Kate/result_of_choice" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/WEB_Flask-wtf/auto_answ" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/WEB_HTML_Forms_Kate/result_of_choice/main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/WEB_Flask-wtf/auto_answ/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -154,11 +161,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main (1)" />
         <item itemvalue="Python.main (5)" />
         <item itemvalue="Python.main (4)" />
         <item itemvalue="Python.main (3)" />
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.main (2)" />
       </list>
     </recent_temporary>
   </component>
@@ -215,7 +222,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584272827783</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="5">
+      <created>1584275063839</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1584275063839</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -223,7 +237,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
