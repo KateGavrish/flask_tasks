@@ -1,0 +1,31 @@
+{
+  "people": [
+    {
+      "name": "number 1",
+      "img": "2.png",
+      "description": [
+        "qwerty",
+        "wefwf",
+        "3fqwff"
+      ]
+    },
+    {
+      "name": "number 2",
+      "img": "1.png",
+      "description": [
+        "qwdqwerty",
+        "rgrgwefwf",
+        "grgr3fqwff"
+      ]
+    },
+    {
+      "name": "number 3",
+      "img": "434219-Kycb.jpg",
+      "description": [
+        "imhmqwerty",
+        "ynywefwf",
+        "yny3fqwff"
+      ]
+    }
+  ]
+}
