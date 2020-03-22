@@ -17,12 +17,16 @@ class RegisterForm(FlaskForm):
     name = StringField('Имя пользователя', validators=[DataRequired()])
     surname = StringField('Фамилия пользователя', validators=[DataRequired()])
     address = StringField('Адрес пользователя', validators=[DataRequired()])
-    address = StringField('Адрес пользователя', validators=[DataRequired()])
+    speciality = StringField('Специальность', validators=[DataRequired()])
+    position = StringField('Должность', validators=[DataRequired()])
+    age = StringField('Возраст', validators=[DataRequired()])
+
     submit = SubmitField('Войти')
 
 
 @app.route('/register', methods=['GET', 'POST'])
 def reqister():
+    db_session.global_init("db/blogs.sqlite")
     form = RegisterForm()
     if form.validate_on_submit():
         if form.password.data != form.password_again.data:
@@ -36,9 +40,12 @@ def reqister():
                                    message="Такой пользователь уже есть")
         user = User(
             name=form.name.data,
-            surname=form.name.data,
+            surname=form.surname.data,
             email=form.email.data,
-            address=form.about.data,
+            address=form.address.data,
+            speciality=form.speciality.data,
+            position=form.position.data,
+            age=int(form.age.data)
         )
         user.set_password(form.password.data)
         session.add(user)
