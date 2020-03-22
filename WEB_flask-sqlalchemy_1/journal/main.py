@@ -9,7 +9,7 @@ app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
 
 @app.route('/')
 def main():
-    db_session.global_init("db/blogs.sqlite")
+    db_session.global_init("journal/db/blogs.sqlite")
     session = db_session.create_session()
     i = []
     for job in session.query(Jobs).all():
