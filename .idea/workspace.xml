@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ebff3ddd-e72e-4a2d-b7ec-937b2c65b66e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/WEB_flask-sqlalchemy_1/data/__all_models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_flask-sqlalchemy_1/data/db_session.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_flask-sqlalchemy_1/data/j.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_flask-sqlalchemy_1/data/u.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_flask-sqlalchemy_1/db/blogs.sqlite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_flask-sqlalchemy_1/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_flask-sqlalchemy_1/static/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_flask-sqlalchemy_1/templates/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_flask-sqlalchemy_1/templates/job.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="ebff3ddd-e72e-4a2d-b7ec-937b2c65b66e" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +91,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/WEB_flask-sqlalchemy_1/main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/WEB_flask-sqlalchemy_1/journal/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -279,7 +268,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584718821085</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="5">
+      <created>1584888681044</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1584888681044</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
