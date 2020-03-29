@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebff3ddd-e72e-4a2d-b7ec-937b2c65b66e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/WEB_flask-sqlalchemy/model_of_login/data/__all_models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_flask-sqlalchemy/model_of_login/data/db_session.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_flask-sqlalchemy/model_of_login/data/j.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_flask-sqlalchemy/model_of_login/data/u.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_flask-sqlalchemy/model_of_login/db/blogs.sqlite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_flask-sqlalchemy/model_of_login/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_flask-sqlalchemy/model_of_login/templates/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_flask-sqlalchemy/model_of_login/templates/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_flask-sqlalchemy/model_of_login/templates/main_page.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_flask-sqlalchemy/model_of_login/templates/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WEB_flask-sqlalchemy/model_of_login/templates/job.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB_flask-sqlalchemy/model_of_login/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_flask-sqlalchemy/model_of_login/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -308,7 +300,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584891804798</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="5">
+      <created>1585472063634</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1585472063634</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -6,6 +6,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, BooleanField
 from wtforms.fields.html5 import EmailField
 from wtforms.validators import DataRequired
+from data.j import Jobs
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
@@ -79,11 +80,21 @@ def login():
         user = session.query(User).filter(User.email == form.email.data).first()
         if user and user.check_password(form.password.data):
             login_user(user, remember=form.remember_me.data)
-            return redirect("/")
+            return redirect("/jobs")
         return render_template('login.html',
                                message="Неправильный логин или пароль",
                                form=form)
     return render_template('login.html', title='Авторизация', form=form)
+
+
+@app.route('/jobs')
+def main():
+    db_session.global_init("db/blogs.sqlite")
+    session = db_session.create_session()
+    i = []
+    for job in session.query(Jobs).all():
+        i.append([job.id, job.job, job.team_leader, job.work_size, job.collaborators, job.is_finished])
+    return render_template('job.html', i=i)
 
 
 @app.route('/logout')
