@@ -1,9 +1,10 @@
-from flask import Flask, render_template, redirect
+from flask import Flask, render_template, redirect, request
 from data import db_session
 from data.u import User
 from flask_login import LoginManager, login_user, login_required, logout_user
-from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField, BooleanField
+from flask_wtf import FlaskForm, Form
+from wtforms import StringField, PasswordField, SubmitField, BooleanField, DateField, SelectField, IntegerField, \
+    FieldList, FormField
 from wtforms.fields.html5 import EmailField
 from wtforms.validators import DataRequired
 from data.j import Jobs
@@ -42,19 +43,55 @@ class RegisterForm(FlaskForm):
     submit = SubmitField('Войти')
 
 
+class JobForm(FlaskForm):
+    db_session.global_init("db/blogs.sqlite")
+    session = db_session.create_session()
+    a = []
+    for user in session.query(User):
+        a.append((user.name, user.name + ' ' + user.surname))
+    team_leader = SelectField('Тимлид', choices=a, validators=False)
+    name = StringField('Название', validators=[DataRequired()])
+    work_size = IntegerField('Продолжительность', validators=[DataRequired()])
+    collaborators = StringField('Название', validators=[DataRequired()])
+    start_date = DateField('Дата начала', validators=[DataRequired()], format='%Y-%m-%d')
+    is_finished = BooleanField('Работа завершена?', validators=False)
+
+    submit = SubmitField('Создать')
+
+
+@app.route('/create_job', methods=['GET', 'POST'])
+def create_job():
+    form = JobForm()
+    if form.validate_on_submit():
+        db_session.global_init("db/blogs.sqlite")
+        session = db_session.create_session()
+        team_id = session.query(User).filter(User.name == form.team_leader.data).first().id
+
+        job = Jobs()
+        job.team_leader = team_id
+        job.job = form.name.data
+        job.work_size = form.work_size.data
+        job.collaborators = form.collaborators.data
+        job.start_date = form.start_date.data
+        job.is_finished = form.is_finished.data
+
+        session.add(job)
+        session.commit()
+
+        return redirect('/jobs')
+    return render_template('create_job.html', form=form)
+
+
 @app.route('/register', methods=['GET', 'POST'])
 def reqister():
     db_session.global_init("db/blogs.sqlite")
     form = RegisterForm()
-    if form.validate_on_submit():
+    if request.method == 'POST' and form.validate_on_submit():
         if form.password.data != form.password_again.data:
-            return render_template('register.html', title='Регистрация',
-                                   form=form,
-                                   message="Пароли не совпадают")
+            return render_template('register.html', title='Регистрация', form=form, message="Пароли не совпадают")
         session = db_session.create_session()
         if session.query(User).filter(User.email == form.email.data).first():
-            return render_template('register.html', title='Регистрация',
-                                   form=form,
+            return render_template('register.html', title='Регистрация', form=form,
                                    message="Такой пользователь уже есть")
         user = User(
             name=form.name.data,
@@ -75,25 +112,27 @@ def reqister():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
-    if form.validate_on_submit():
+    if request.method == 'POST' and form.validate_on_submit():
         session = db_session.create_session()
         user = session.query(User).filter(User.email == form.email.data).first()
         if user and user.check_password(form.password.data):
             login_user(user, remember=form.remember_me.data)
             return redirect("/jobs")
-        return render_template('login.html',
-                               message="Неправильный логин или пароль",
-                               form=form)
-    return render_template('login.html', title='Авторизация', form=form)
+        return render_template('login.html', message="Неправильный логин или пароль", form=form)
+    else:
+        return render_template('login.html', title='Авторизация', form=form)
 
 
 @app.route('/jobs')
 def main():
     db_session.global_init("db/blogs.sqlite")
     session = db_session.create_session()
+
     i = []
     for job in session.query(Jobs).all():
-        i.append([job.id, job.job, job.team_leader, job.work_size, job.collaborators, job.is_finished])
+        team = session.query(User).filter(User.id == job.team_leader).first().name
+        team += ' ' + session.query(User).filter(User.id == job.team_leader).first().surname
+        i.append([job.id, job.job, team, job.work_size, job.collaborators, job.is_finished])
     return render_template('job.html', i=i)
 
 
@@ -104,10 +143,34 @@ def logout():
     return redirect("/")
 
 
+@app.route('/index')
 @app.route('/')
 def qwe():
-    return render_template('main_page.html')
+    return '''<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-light bg-light">
+            <h1 class="navbar-brand" href="#">Миссия Колонизация Марса</h1>
+            <p>
+                <a class="btn btn-primary " href="/register">Зарегистрироваться</a>
+                <a class="btn btn-success" href="/login">Войти</a>
+            </p>
+            <h1>Главная</h1>
+        </nav>
+    </header>
+</body>
+</html>'''
 
 
 if __name__ == '__main__':
-    app.run(port=8080, host='127.0.0.1')
+    app.run(debug=True, port=8080, host='127.0.0.1')
