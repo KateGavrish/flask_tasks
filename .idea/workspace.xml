@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebff3ddd-e72e-4a2d-b7ec-937b2c65b66e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/WEB_flask-sqlalchemy/model_of_login/data/d.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WEB_flask-sqlalchemy/model_of_login/templates/create_department.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WEB_flask-sqlalchemy/model_of_login/templates/department.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB_flask-sqlalchemy/model_of_login/db/blogs.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_flask-sqlalchemy/model_of_login/db/blogs.sqlite" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WEB_flask-sqlalchemy/model_of_login/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_flask-sqlalchemy/model_of_login/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB_flask-sqlalchemy/model_of_login/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_flask-sqlalchemy/model_of_login/templates/base.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,8 +19,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -60,6 +66,27 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.main (4)">
+    <configuration name="db_create" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="flask_tasks" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/WEB_flask-sqlalchemy/model_of_login" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/WEB_flask-sqlalchemy/model_of_login/db_create.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="flask_tasks" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -94,27 +121,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/WEB_flask-sqlalchemy_1/journal/main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="main (3)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="flask_tasks" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/WEB_Flask-wtf/gallery_with_upload" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/WEB_Flask-wtf/gallery_with_upload/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -168,10 +174,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main (4)" />
+        <item itemvalue="Python.db_create" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.main (2)" />
         <item itemvalue="Python.main (1)" />
-        <item itemvalue="Python.main (3)" />
       </list>
     </recent_temporary>
   </component>
@@ -326,7 +332,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585655666723</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="5">
+      <created>1585656151132</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1585656151132</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -8,6 +8,8 @@ from wtforms import StringField, PasswordField, SubmitField, BooleanField, DateF
 from wtforms.fields.html5 import EmailField
 from wtforms.validators import DataRequired
 from data.j import Jobs
+from data.d import Departments
+
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
@@ -41,6 +43,20 @@ class RegisterForm(FlaskForm):
     age = StringField('Возраст', validators=[DataRequired()])
 
     submit = SubmitField('Войти')
+
+
+class DepartmentsForm(FlaskForm):
+    db_session.global_init("db/blogs.sqlite")
+    session = db_session.create_session()
+    a = []
+    for user in session.query(User):
+        a.append((user.name, user.name + ' ' + user.surname))
+    chief = SelectField('Chief', choices=a, validators=False)
+    email = StringField('Почта', validators=[DataRequired()])
+    name = StringField('Название', validators=[DataRequired()])
+    collaborators = StringField('Участники', validators=[DataRequired()])
+
+    submit = SubmitField('Создать')
 
 
 class JobForm(FlaskForm):
@@ -82,6 +98,27 @@ def create_job():
     return render_template('create_job.html', form=form)
 
 
+@app.route('/create_department', methods=['GET', 'POST'])
+def create_department():
+    form = DepartmentsForm()
+    db_session.global_init("db/blogs.sqlite")
+    session = db_session.create_session()
+    if request.method == 'POST' and form.validate_on_submit():
+        chief_id = session.query(User).filter(User.name == form.chief.data).first().id
+        dep = Departments()
+
+        dep.chief = chief_id
+        dep.title = form.name.data
+        dep.members = form.collaborators.data
+        dep.email = form.email.data
+
+        session.add(dep)
+        session.commit()
+
+        return redirect('/departments')
+    return render_template('create_department.html', form=form)
+
+
 @app.route('/edit_job/<int:id>', methods=['GET', 'POST'])
 def edit_job(id):
     form = JobForm()
@@ -116,15 +153,56 @@ def edit_job(id):
     return render_template('create_job.html', form=form)
 
 
+@app.route('/edit_department/<int:id>', methods=['GET', 'POST'])
+def edit_department(id):
+    form = DepartmentsForm()
+    db_session.global_init("db/blogs.sqlite")
+    session = db_session.create_session()
+    if request.method == 'POST' and form.validate_on_submit():
+        chief_id = session.query(User).filter(User.name == form.chief.data).first().id
+        dep = Departments()
+
+        dep.chief = chief_id
+        dep.title = form.name.data
+        dep.members = form.collaborators.data
+        dep.email = form.email.data
+
+        session.add(dep)
+        session.commit()
+
+        return redirect('/departments')
+
+    else:
+        dep = session.query(Departments).filter(Departments.id == id).first()
+        chief_name = session.query(User).filter(User.id == dep.chief).first().name
+        form.chief.data = chief_name
+        form.name.data = dep.title
+        form.collaborators.data = dep.members
+        form.email.data = dep.email
+
+    return render_template('create_department.html', form=form)
+
+
 @app.route('/job_delete/<int:id>', methods=['GET', 'POST'])
 @login_required
-def news_delete(id):
+def job_delete(id):
     session = db_session.create_session()
     job = session.query(Jobs).filter(Jobs.id == id, Jobs.user == current_user).first()
     if job:
         session.delete(job)
         session.commit()
     return redirect('/jobs')
+
+
+@app.route('/department_delete/<int:id>', methods=['GET', 'POST'])
+@login_required
+def department_delete(id):
+    session = db_session.create_session()
+    job = session.query(Departments).filter(Departments.id == id, Departments.user == current_user).first()
+    if job:
+        session.delete(job)
+        session.commit()
+    return redirect('/departments')
 
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -179,6 +257,19 @@ def main():
         team += ' ' + session.query(User).filter(User.id == job.team_leader).first().surname
         i.append([job.id, job.job, team, job.work_size, job.collaborators, job.is_finished, job.user.id])
     return render_template('job.html', i=i)
+
+
+@app.route('/departments')
+def main1():
+    db_session.global_init("db/blogs.sqlite")
+    session = db_session.create_session()
+
+    i = []
+    for job in session.query(Departments).all():
+        team = session.query(User).filter(User.id == job.chief).first().name
+        team += ' ' + session.query(User).filter(User.id == job.chief).first().surname
+        i.append([job.id, job.title, team, job.members, job.email, job.user.id])
+    return render_template('department.html', i=i)
 
 
 @app.route('/logout')
