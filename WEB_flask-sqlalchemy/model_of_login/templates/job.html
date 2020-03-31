@@ -25,7 +25,10 @@
         <td>{{ a[4] }}</td>
         <td class="fin">{% if a[5] == 1 %} Finished {% else %} Is not finished {% endif %}</td>
         {% if a[6] == current_user.id %}
-        <td><a class="btn btn-primary " href="/edit_job/{{ a[0] }}">Редактировать работу</a></td>
+        <td>
+            <a class="btn btn-primary" href="/edit_job/{{ a[0] }}">Редактировать работу</a>
+            <a class="btn btn-danger" href="/job_delete/{{ a[0] }}">Удалить работу</a>
+        </td>
         {% endif %}
     </tr>
     {% endfor %}

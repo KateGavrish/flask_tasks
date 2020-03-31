@@ -116,6 +116,17 @@ def edit_job(id):
     return render_template('create_job.html', form=form)
 
 
+@app.route('/job_delete/<int:id>', methods=['GET', 'POST'])
+@login_required
+def news_delete(id):
+    session = db_session.create_session()
+    job = session.query(Jobs).filter(Jobs.id == id, Jobs.user == current_user).first()
+    if job:
+        session.delete(job)
+        session.commit()
+    return redirect('/jobs')
+
+
 @app.route('/register', methods=['GET', 'POST'])
 def reqister():
     db_session.global_init("db/blogs.sqlite")
