@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebff3ddd-e72e-4a2d-b7ec-937b2c65b66e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/WEB_flask-sqlalchemy/model_of_login/static/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_flask-sqlalchemy/model_of_login/templates/create_job.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WEB_flask-sqlalchemy/model_of_login/db/blogs.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_flask-sqlalchemy/model_of_login/db/blogs.sqlite" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WEB_flask-sqlalchemy/model_of_login/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_flask-sqlalchemy/model_of_login/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WEB_flask-sqlalchemy/model_of_login/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_flask-sqlalchemy/model_of_login/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WEB_flask-sqlalchemy/model_of_login/templates/main_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_flask-sqlalchemy/model_of_login/templates/main_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB_flask-sqlalchemy/model_of_login/templates/job.html" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_flask-sqlalchemy/model_of_login/templates/job.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,7 +33,7 @@
   <component name="ProjectId" id="1Z9pQT76kZNwSDbVQSPmL2PNxUv" />
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/WEB_flask-sqlalchemy/model_of_login/static/css" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -318,7 +316,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585472662251</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="5">
+      <created>1585481654306</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1585481654306</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -1,7 +1,7 @@
 from flask import Flask, render_template, redirect, request
 from data import db_session
 from data.u import User
-from flask_login import LoginManager, login_user, login_required, logout_user
+from flask_login import LoginManager, login_user, login_required, logout_user, current_user
 from flask_wtf import FlaskForm, Form
 from wtforms import StringField, PasswordField, SubmitField, BooleanField, DateField, SelectField, IntegerField, \
     FieldList, FormField
@@ -52,7 +52,7 @@ class JobForm(FlaskForm):
     team_leader = SelectField('Тимлид', choices=a, validators=False)
     name = StringField('Название', validators=[DataRequired()])
     work_size = IntegerField('Продолжительность', validators=[DataRequired()])
-    collaborators = StringField('Название', validators=[DataRequired()])
+    collaborators = StringField('Участники', validators=[DataRequired()])
     start_date = DateField('Дата начала', validators=[DataRequired()], format='%Y-%m-%d')
     is_finished = BooleanField('Работа завершена?', validators=False)
 
@@ -62,9 +62,9 @@ class JobForm(FlaskForm):
 @app.route('/create_job', methods=['GET', 'POST'])
 def create_job():
     form = JobForm()
-    if form.validate_on_submit():
-        db_session.global_init("db/blogs.sqlite")
-        session = db_session.create_session()
+    db_session.global_init("db/blogs.sqlite")
+    session = db_session.create_session()
+    if request.method == 'POST' and form.validate_on_submit():
         team_id = session.query(User).filter(User.name == form.team_leader.data).first().id
 
         job = Jobs()
@@ -79,6 +79,40 @@ def create_job():
         session.commit()
 
         return redirect('/jobs')
+    return render_template('create_job.html', form=form)
+
+
+@app.route('/edit_job/<int:id>', methods=['GET', 'POST'])
+def edit_job(id):
+    form = JobForm()
+    db_session.global_init("db/blogs.sqlite")
+    session = db_session.create_session()
+
+    if request.method == 'POST' and form.validate_on_submit():
+        team_id = session.query(User).filter(User.name == form.team_leader.data).first().id
+
+        job = session.query(Jobs).filter(Jobs.id == id).first()
+        job.team_leader = team_id
+        job.job = form.name.data
+        job.work_size = form.work_size.data
+        job.collaborators = form.collaborators.data
+        job.start_date = form.start_date.data
+        job.is_finished = form.is_finished.data
+
+        session.commit()
+
+        return redirect('/jobs')
+
+    else:
+        job = session.query(Jobs).filter(Jobs.id == id).first()
+        team_name = session.query(User).filter(User.id == job.team_leader).first().name
+        form.team_leader.data = team_name
+        form.name.data = job.job
+        form.work_size.data = job.work_size
+        form.collaborators.data = job.collaborators
+        form.start_date.data = job.start_date
+        form.is_finished.data = job.is_finished
+
     return render_template('create_job.html', form=form)
 
 
@@ -132,7 +166,7 @@ def main():
     for job in session.query(Jobs).all():
         team = session.query(User).filter(User.id == job.team_leader).first().name
         team += ' ' + session.query(User).filter(User.id == job.team_leader).first().surname
-        i.append([job.id, job.job, team, job.work_size, job.collaborators, job.is_finished])
+        i.append([job.id, job.job, team, job.work_size, job.collaborators, job.is_finished, job.user.id])
     return render_template('job.html', i=i)
 
 

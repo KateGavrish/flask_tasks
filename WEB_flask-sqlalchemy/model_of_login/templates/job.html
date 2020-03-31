@@ -4,6 +4,7 @@
 <h1>Work logs</h1>
 <table>
     {% for a in i %}
+
     <tr>
         <th>Action # {{ a[0] }}</th>
         <th></th>
@@ -23,6 +24,9 @@
         <td>{{ a[3] }} hours</td>
         <td>{{ a[4] }}</td>
         <td class="fin">{% if a[5] == 1 %} Finished {% else %} Is not finished {% endif %}</td>
+        {% if a[6] == current_user.id %}
+        <td><a class="btn btn-primary " href="/edit_job/{{ a[0] }}">Редактировать работу</a></td>
+        {% endif %}
     </tr>
     {% endfor %}
 </table>
