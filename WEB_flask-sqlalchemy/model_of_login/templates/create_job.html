@@ -49,6 +49,15 @@
     {% endfor %}
 
     <p>
+        {{ form.type_of_job.label }}<br>
+        {{ form.type_of_job(class="form-control") }}<br>
+        {% for error in form.type_of_job.errors %}
+    <p class="alert alert-danger" role="alert">
+        {{ error }}
+    </p>
+    {% endfor %}
+
+    <p>
         {{ form.is_finished.label }}<br>
         {{ form.is_finished(class="form-control") }}<br>
         {% for error in form.is_finished.errors %}

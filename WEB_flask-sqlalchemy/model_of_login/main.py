@@ -9,6 +9,7 @@ from wtforms.fields.html5 import EmailField
 from wtforms.validators import DataRequired
 from data.j import Jobs
 from data.d import Departments
+from data.c import Category
 
 
 app = Flask(__name__)
@@ -16,6 +17,7 @@ app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
 
 login_manager = LoginManager()
 login_manager.init_app(app)
+db_session.global_init("db/blogs.sqlite")
 
 
 @login_manager.user_loader
@@ -70,6 +72,12 @@ class JobForm(FlaskForm):
     work_size = IntegerField('Продолжительность', validators=[DataRequired()])
     collaborators = StringField('Участники', validators=[DataRequired()])
     start_date = DateField('Дата начала', validators=[DataRequired()], format='%Y-%m-%d')
+
+    a = []
+    for user in session.query(Category):
+        a.append((str(user.id), user.type))
+    type_of_job = SelectField('Тип работы', choices=a, validators=False)
+
     is_finished = BooleanField('Работа завершена?', validators=False)
 
     submit = SubmitField('Создать')
@@ -89,6 +97,8 @@ def create_job():
         job.work_size = form.work_size.data
         job.collaborators = form.collaborators.data
         job.start_date = form.start_date.data
+        job.type_of_job = int(form.type_of_job.data)
+
         job.is_finished = form.is_finished.data
 
         session.add(job)
@@ -134,6 +144,7 @@ def edit_job(id):
         job.work_size = form.work_size.data
         job.collaborators = form.collaborators.data
         job.start_date = form.start_date.data
+        job.type_of_job = form.type_of_job.data
         job.is_finished = form.is_finished.data
 
         session.commit()
@@ -148,6 +159,7 @@ def edit_job(id):
         form.work_size.data = job.work_size
         form.collaborators.data = job.collaborators
         form.start_date.data = job.start_date
+        form.type_of_job.data = job.type_of_job
         form.is_finished.data = job.is_finished
 
     return render_template('create_job.html', form=form)
@@ -247,6 +259,8 @@ def login():
 
 
 @app.route('/jobs')
+@app.route('/index')
+@app.route('/')
 def main():
     db_session.global_init("db/blogs.sqlite")
     session = db_session.create_session()
@@ -255,7 +269,8 @@ def main():
     for job in session.query(Jobs).all():
         team = session.query(User).filter(User.id == job.team_leader).first().name
         team += ' ' + session.query(User).filter(User.id == job.team_leader).first().surname
-        i.append([job.id, job.job, team, job.work_size, job.collaborators, job.is_finished, job.user.id])
+        i.append(
+            [job.id, job.job, team, job.work_size, job.collaborators, job.type_of_job, job.is_finished, job.user.id])
     return render_template('job.html', i=i)
 
 
@@ -277,35 +292,6 @@ def main1():
 def logout():
     logout_user()
     return redirect("/")
-
-
-@app.route('/index')
-@app.route('/')
-def qwe():
-    return '''<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet"
-          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-          crossorigin="anonymous">
-    <link rel="stylesheet" href="/static/css/style.css">
-</head>
-<body>
-    <header>
-        <nav class="navbar navbar-light bg-light">
-            <h1 class="navbar-brand" href="#">Миссия Колонизация Марса</h1>
-            <p>
-                <a class="btn btn-primary " href="/register">Зарегистрироваться</a>
-                <a class="btn btn-success" href="/login">Войти</a>
-            </p>
-            <h1>Главная</h1>
-        </nav>
-    </header>
-</body>
-</html>'''
 
 
 if __name__ == '__main__':

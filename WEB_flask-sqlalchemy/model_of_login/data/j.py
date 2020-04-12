@@ -20,5 +20,5 @@ class Jobs(SqlAlchemyBase, UserMixin, SerializerMixin):
     start_date = sqlalchemy.Column(sqlalchemy.DateTime)
     end_date = sqlalchemy.Column(sqlalchemy.DateTime)
     is_finished = sqlalchemy.Column(sqlalchemy.Boolean)
-
+    type_of_job = sqlalchemy.Column(sqlalchemy.Integer, sqlalchemy.ForeignKey("cat.id"))
     user = orm.relation('User')
