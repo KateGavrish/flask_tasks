@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ebff3ddd-e72e-4a2d-b7ec-937b2c65b66e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/WEB_flask-sqlalchemy/model_of_login/data/c.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WEB_flask-sqlalchemy/model_of_login/data/__all_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_flask-sqlalchemy/model_of_login/data/__all_models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WEB_flask-sqlalchemy/model_of_login/data/j.py" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_flask-sqlalchemy/model_of_login/data/j.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WEB_flask-sqlalchemy/model_of_login/db/blogs.sqlite" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WEB_flask-sqlalchemy/model_of_login/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_flask-sqlalchemy/model_of_login/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WEB_flask-sqlalchemy/model_of_login/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_flask-sqlalchemy/model_of_login/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WEB_flask-sqlalchemy/model_of_login/templates/create_job.html" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_flask-sqlalchemy/model_of_login/templates/create_job.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WEB_flask-sqlalchemy/model_of_login/templates/job.html" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_flask-sqlalchemy/model_of_login/templates/job.html" afterDir="false" />
-    </list>
+    <list default="true" id="ebff3ddd-e72e-4a2d-b7ec-937b2c65b66e" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +27,7 @@
   <component name="ProjectId" id="1Z9pQT76kZNwSDbVQSPmL2PNxUv" />
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
@@ -348,7 +339,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585665349793</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="5">
+      <created>1586694116900</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1586694116900</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
